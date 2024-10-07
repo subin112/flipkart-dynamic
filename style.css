@@ -932,7 +932,7 @@ height: 100%;
     background-color: #fff;
     position: absolute;
     right: 0;
-    /* left: 0; */
+     /* left: 0; */
   }
 .whitesection{
   display: none;
@@ -1028,11 +1028,38 @@ height: 100%;
 .rightmobile{
   display: flex;
   align-items: center;
+  column-gap: 20px;
+}
+.leftmobile span{
+  font-family: "regular-italic";
+  font-weight: 600;
+}
+.rightmobile span{
+  font-family: "regular-italic";
+  font-weight: 500;
 }
 .mobile-wrapper{
   padding: 24px 0 22px 9px;
+  position: relative;
 }
 .bottom >*{
   padding: 10px;
 }
+.likeimg{
+  position: absolute;
+  right: 50px;
+}
+.afterFull span{
+  font-family: "regular-italic";
+  margin-left: 5px;
+}
+.rightmain{
+  padding-right: 0;
+}
+.pages-next{
+  display: flex;
+  align-items: center;
+}
+
+
 }

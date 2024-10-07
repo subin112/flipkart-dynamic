@@ -34,7 +34,7 @@ containerdown.innerHTML = `<div class="fullinner">
   <span>mobile</span>
 </div>
 <div class="rightmobile">
-  <img src="${inner.imgg}" alt="">
+  <img src="${inner.imgg}" alt="" class="rightmobsearch">
   <img src="${inner.imgx}" alt="">
   <span>${inner.imgLogin}</span>
 </div>
@@ -284,7 +284,7 @@ const rightContent = document.querySelector('.mobileright')
         )
           .filter((checkbox) => checkbox.checked)
           .map((checkbox) => checkbox.value.toLowerCase());
-
+console.log("selected")
         if (selectedBrands.length === 0) {
           products(data.Main.mainHeader.mobileGrid);
         } else {
@@ -477,10 +477,8 @@ apple.appendChild(paisa)
             secDropdown.style.display === ""
           ) {
             secDropdown.style.display = "block";
-            dropdownImg.classList.add("up") || dropdownImg.classList.add("");
           } else {
             secDropdown.style.display = "none";
-            dropdownImg.classList.remove("up");
           }
         });
 
