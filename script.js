@@ -25,6 +25,23 @@ document.addEventListener("DOMContentLoaded", () => {
         input.appendChild(blueinside);
         blueContainerIn.appendChild(input);
 
+const containerdown = document.querySelector('.containerdown')
+const inner = data.inner
+containerdown.innerHTML = `<div class="fullinner">
+<div class="leftmobile">
+  <img src="${inner.imgleft}" alt="" class="imgdown">
+  <img src="${inner.imgf}" alt="" class="imgup">
+  <span>mobile</span>
+</div>
+<div class="rightmobile">
+  <img src="${inner.imgg}" alt="">
+  <img src="${inner.imgx}" alt="">
+  <span>${inner.imgLogin}</span>
+</div>
+</div>`
+blueContainer.appendChild(containerdown)
+
+
         const searchInput = document.getElementById("inputBlue");
         searchInput.addEventListener("click", function () {
           const searchTrm = this.value.toLowerCase();
@@ -74,6 +91,74 @@ ${item.cart}
         inside.appendChild(rightSide);
       });
 
+
+      
+      const whiteafter = document.querySelector('.afterwhite')
+      const rig = data.inner
+      whiteafter.innerHTML = `<div class="afterFull">
+<div class="sort">
+  <img src="${rig.sort}" alt="">
+  <span>Sort</span>
+</div>
+<div class="line"></div>
+<div class="filterop">
+  <img src="${rig.filter}" alt="">
+  <span>Filter</span>
+</div>
+
+</div>`
+
+const sortClick = document.querySelector('.sort')
+sortClick.addEventListener('click',()=>{
+   if(window.innerWidth < 800){
+const rightContent = document.querySelector('.mobileright')
+      const hoverdown = document.querySelector('.bottom')  
+      
+      if (
+            hoverdown.style.display === "none" ||
+            hoverdown.style.display === ""
+          ) {
+            hoverdown.style.display = "block";
+            rightContent.classList.add('active')
+             
+          } else {
+            hoverdown.style.display = "none";
+            
+         }
+         whiteafter.appendChild(hoverdown)
+         rightContent.classList.remove('active')
+
+      }
+      })
+
+
+
+      const filterdrop = document.querySelector('.filterop')
+filterdrop.addEventListener('click',()=>{
+
+
+    if(window.innerWidth < 800){
+const rightContent = document.querySelector('.mobileright')
+      const sidebar= document.querySelector('.sidebar')  
+      
+      if (
+            sidebar.style.display === "none" ||
+            sidebar.style.display === ""
+          ) {
+            sidebar.style.display = "block";
+            rightContent.classList.add('active')
+             
+          } else {
+            sidebar.style.display = "none";
+            
+         }
+         whiteafter.appendChild(sidebar)
+         rightContent.classList.remove('active')
+
+      }
+})
+
+      
       const sidebar = document.querySelector(".sidebar");
 
       const sidebarInfil = document.querySelector(".filter");
@@ -295,6 +380,13 @@ ${item.cart}
 
           mobilewrap.appendChild(rupees);
           rightContent.appendChild(mobilewrap);
+
+if(window.innerWidth < 800){
+apple.appendChild(paisa)
+}else{
+   
+}
+
         });
         addPagination(productItem.length, page, perPage);
       }
