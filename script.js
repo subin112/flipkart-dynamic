@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
         input.appendChild(blueinside);
         blueContainerIn.appendChild(input);
 
-const containerdown = document.querySelector('.containerdown')
-const inner = data.inner
-containerdown.innerHTML = `<div class="fullinner">
+        const containerdown = document.querySelector(".containerdown");
+        const inner = data.inner;
+        containerdown.innerHTML = `<div class="fullinner">
 <div class="leftmobile">
   <img src="${inner.imgleft}" alt="" class="imgdown">
   <img src="${inner.imgf}" alt="" class="imgup">
@@ -38,28 +38,26 @@ containerdown.innerHTML = `<div class="fullinner">
   <img src="${inner.imgx}" alt="">
   <span>${inner.imgLogin}</span>
 </div>
-</div>`
-blueContainer.appendChild(containerdown)
+</div>`;
+        blueContainer.appendChild(containerdown);
 
-const rightmobsearcher = document.querySelector('.rightmobsearch')
-rightmobsearcher.addEventListener('click',()=>{
-const brandSearcher = document.querySelector('.brand-input')
-if(brandSearcher.style.display === 'none' ||brandSearcher.style.display=== '' ){
-  brandSearcher.style.display = 'block'
-  rightmobsearcher.classList.add('active')
-  
-}else{
-  brandSearcher.style.display = 'none'
-    rightmobsearcher.classList.remove('active')
-
-}
-if(window.innerWidth < 800){
-  document.querySelector('.fullinner').appendChild(brandSearcher)
-}
-  
-})
-
-
+        const rightmobsearcher = document.querySelector(".rightmobsearch");
+        rightmobsearcher.addEventListener("click", () => {
+          const brandSearcher = document.querySelector(".brand-input");
+          if (
+            brandSearcher.style.display === "none" ||
+            brandSearcher.style.display === ""
+          ) {
+            brandSearcher.style.display = "block";
+            rightmobsearcher.classList.add("active");
+          } else {
+            brandSearcher.style.display = "none";
+            rightmobsearcher.classList.remove("active");
+          }
+          if (window.innerWidth < 800) {
+            document.querySelector(".fullinner").appendChild(brandSearcher);
+          }
+        });
 
         const searchInput = document.querySelector(".inputBlue");
         searchInput.addEventListener("input", function () {
@@ -69,7 +67,6 @@ if(window.innerWidth < 800){
           );
           products(filteredProducts);
         });
-
 
         const firstLogin = document.createElement("div");
         firstLogin.className = "Login";
@@ -111,10 +108,8 @@ ${item.cart}
         inside.appendChild(rightSide);
       });
 
-
-      
-      const whiteafter = document.querySelector('.afterwhite')
-      const rig = data.inner
+      const whiteafter = document.querySelector(".afterwhite");
+      const rig = data.inner;
       whiteafter.innerHTML = `<div class="afterFull">
 <div class="sort">
   <img src="${rig.sort}" alt="">
@@ -126,59 +121,48 @@ ${item.cart}
   <span>Filter</span>
 </div>
 
-</div>`
+</div>`;
 
-const sortClick = document.querySelector('.sort')
-sortClick.addEventListener('click',()=>{
-   if(window.innerWidth < 800){
-const rightContent = document.querySelector('.mobileright')
-      const hoverdown = document.querySelector('.bottom')  
-      
-      if (
+      const sortClick = document.querySelector(".sort");
+      sortClick.addEventListener("click", () => {
+        if (window.innerWidth < 800) {
+          const rightContent = document.querySelector(".mobileright");
+          const hoverdown = document.querySelector(".bottom");
+
+          if (
             hoverdown.style.display === "none" ||
             hoverdown.style.display === ""
           ) {
             hoverdown.style.display = "block";
-            rightContent.classList.add('active')
-             
+            rightContent.classList.add("active");
           } else {
             hoverdown.style.display = "none";
-            
-         }
-         whiteafter.appendChild(hoverdown)
-         rightContent.classList.remove('active')
+          }
+          whiteafter.appendChild(hoverdown);
+          rightContent.classList.remove("active");
+        }
+      });
 
-      }
-      })
+      const filterdrop = document.querySelector(".filterop");
+      filterdrop.addEventListener("click", () => {
+        if (window.innerWidth < 800) {
+          const rightContent = document.querySelector(".mobileright");
+          const sidebar = document.querySelector(".sidebar");
 
-
-
-      const filterdrop = document.querySelector('.filterop')
-filterdrop.addEventListener('click',()=>{
-
-
-    if(window.innerWidth < 800){
-const rightContent = document.querySelector('.mobileright')
-      const sidebar= document.querySelector('.sidebar')  
-      
-      if (
+          if (
             sidebar.style.display === "none" ||
             sidebar.style.display === ""
           ) {
             sidebar.style.display = "block";
-            rightContent.classList.add('active')
-             
+            rightContent.classList.add("active");
           } else {
             sidebar.style.display = "none";
-            
-         }
-         whiteafter.appendChild(sidebar)
-         rightContent.classList.remove('active')
+          }
+          whiteafter.appendChild(sidebar);
+          rightContent.classList.remove("active");
+        }
+      });
 
-      }
-})
-
-      
       const sidebar = document.querySelector(".sidebar");
 
       const sidebarInfil = document.querySelector(".filter");
@@ -273,21 +257,17 @@ const rightContent = document.querySelector('.mobileright')
       brandcount.appendChild(brandSearch);
       brandmain.appendChild(brandcount);
 
+      const brandInput = document.querySelector(".brand-input");
 
-    const brandInput = document.querySelector('.brand-input')
+      brandInput.addEventListener("input", function () {
+        const searchTrm = this.value.toLowerCase();
 
-brandInput.addEventListener("input", function () {
-  const searchTrm = this.value.toLowerCase();
+        const filteredProducts = data.Main.mainHeader.mobileGrid.filter(
+          (item) => item.mobilename.toLowerCase().includes(searchTrm)
+        );
 
-  const filteredProducts = data.Main.mainHeader.mobileGrid.filter(
-    (item) => item.mobilename.toLowerCase().includes(searchTrm)
-  );
-
-  products(filteredProducts);
-});
-
-    
-
+        products(filteredProducts);
+      });
 
       const brandimage = document.querySelector(".branddiv img");
       brandtxt.addEventListener("click", () => {
@@ -320,7 +300,7 @@ brandInput.addEventListener("input", function () {
         )
           .filter((checkbox) => checkbox.checked)
           .map((checkbox) => checkbox.value.toLowerCase());
-console.log("selected")
+        console.log("selected");
         if (selectedBrands.length === 0) {
           products(data.Main.mainHeader.mobileGrid);
         } else {
@@ -417,12 +397,10 @@ console.log("selected")
           mobilewrap.appendChild(rupees);
           rightContent.appendChild(mobilewrap);
 
-if(window.innerWidth < 800){
-apple.appendChild(paisa)
-}else{
-   
-}
-
+          if (window.innerWidth < 800) {
+            apple.appendChild(paisa);
+          } else {
+          }
         });
         addPagination(productItem.length, page, perPage);
       }
@@ -432,9 +410,8 @@ apple.appendChild(paisa)
       const lastpage = document.querySelector(".pages-next");
       lastpage.innerHTML = `<span>${data.Main.bottomBtn.btnSpan}</span>`;
 
+      //---------------  -------------- pagination
 
-//---------------  -------------- pagination
-      
       function addPagination(totalItems, currentPage, perPage) {
         const paginatedfunc = document.querySelector(".looking");
 
@@ -473,7 +450,7 @@ apple.appendChild(paisa)
 
             document.querySelectorAll(".pagination a").forEach((link) => {
               if (link === event.target) {
-                link.classList.add("active") ||link.classList.add('');
+                link.classList.add("active") || link.classList.add("");
               } else {
                 link.classList.remove("active");
               }
@@ -604,23 +581,23 @@ apple.appendChild(paisa)
 
       // --------------    low price
       const lowHigh = document.getElementById("filter4");
-      lowHigh.addEventListener("click", ()=> {
+      lowHigh.addEventListener("click", () => {
         const aray = data.Main.mainHeader.mobileGrid;
         const sorted = aray.sort(
-          (a , b) => parseFloat(a.price) - parseFloat(b.price)
+          (a, b) => parseFloat(a.price) - parseFloat(b.price)
         );
-        products(aray,sorted);
+        products(aray, sorted);
       });
 
       // --------------  hight to low
       const hightoLow = document.getElementById("filter5");
-      hightoLow.addEventListener("click",  ()=> {
+      hightoLow.addEventListener("click", () => {
         const arrayI = data.Main.mainHeader.mobileGrid;
         const sortedH = arrayI.sort(
-          (a , b) => parseFloat(b.price) - parseFloat(a.price)
+          (a, b) => parseFloat(b.price) - parseFloat(a.price)
         );
-       
-        products(arrayI,sortedH);
+
+        products(arrayI, sortedH);
       });
 
       const last = document.querySelector(".footer-bottom");

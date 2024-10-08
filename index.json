@@ -1,14 +1,13 @@
 {
-
-"inner":{
-"imgleft":"icons/blkleftarrow.svg",
-"imgf":"icons/flip.png",
-"imgg":"icons/blksearch.svg",
-"imgx":"icons/blckcart.svg",
-"imgLogin":"Login",
-"sort":"icons/ring.svg",
-"filter":"icons/sort.svg"
-},
+  "inner": {
+    "imgleft": "icons/blkleftarrow.svg",
+    "imgf": "icons/flip.png",
+    "imgg": "icons/blksearch.svg",
+    "imgx": "icons/blckcart.svg",
+    "imgLogin": "Login",
+    "sort": "icons/ring.svg",
+    "filter": "icons/sort.svg"
+  },
 
   "header": [
     {
