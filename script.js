@@ -41,15 +41,35 @@ containerdown.innerHTML = `<div class="fullinner">
 </div>`
 blueContainer.appendChild(containerdown)
 
+const rightmobsearcher = document.querySelector('.rightmobsearch')
+rightmobsearcher.addEventListener('click',()=>{
+const brandSearcher = document.querySelector('.brand-input')
+if(brandSearcher.style.display === 'none' ||brandSearcher.style.display=== '' ){
+  brandSearcher.style.display = 'block'
+  rightmobsearcher.classList.add('active')
+  
+}else{
+  brandSearcher.style.display = 'none'
+    rightmobsearcher.classList.remove('active')
 
-        const searchInput = document.getElementById("inputBlue");
-        searchInput.addEventListener("click", function () {
+}
+if(window.innerWidth < 800){
+  document.querySelector('.fullinner').appendChild(brandSearcher)
+}
+  
+})
+
+
+
+        const searchInput = document.querySelector(".inputBlue");
+        searchInput.addEventListener("input", function () {
           const searchTrm = this.value.toLowerCase();
           const filteredProducts = data.Main.mainHeader.mobileGrid.filter(
             (item) => item.mobilename.toLowerCase().includes(searchTrm)
           );
           products(filteredProducts);
         });
+
 
         const firstLogin = document.createElement("div");
         firstLogin.className = "Login";
@@ -253,6 +273,22 @@ const rightContent = document.querySelector('.mobileright')
       brandcount.appendChild(brandSearch);
       brandmain.appendChild(brandcount);
 
+
+    const brandInput = document.querySelector('.brand-input')
+
+brandInput.addEventListener("input", function () {
+  const searchTrm = this.value.toLowerCase();
+
+  const filteredProducts = data.Main.mainHeader.mobileGrid.filter(
+    (item) => item.mobilename.toLowerCase().includes(searchTrm)
+  );
+
+  products(filteredProducts);
+});
+
+    
+
+
       const brandimage = document.querySelector(".branddiv img");
       brandtxt.addEventListener("click", () => {
         if (
@@ -301,7 +337,7 @@ console.log("selected")
         box.addEventListener("change", filterfunc);
       });
 
-      function products(productItem, page = 1, perPage = 10) {
+      function products(productItem, page = 1, perPage = 7) {
         const rightContent = document.querySelector(".mobileright");
         rightContent.innerHTML = "";
 
@@ -396,6 +432,9 @@ apple.appendChild(paisa)
       const lastpage = document.querySelector(".pages-next");
       lastpage.innerHTML = `<span>${data.Main.bottomBtn.btnSpan}</span>`;
 
+
+//---------------  -------------- pagination
+      
       function addPagination(totalItems, currentPage, perPage) {
         const paginatedfunc = document.querySelector(".looking");
 
@@ -434,7 +473,7 @@ apple.appendChild(paisa)
 
             document.querySelectorAll(".pagination a").forEach((link) => {
               if (link === event.target) {
-                link.classList.add("active");
+                link.classList.add("active") ||link.classList.add('');
               } else {
                 link.classList.remove("active");
               }
