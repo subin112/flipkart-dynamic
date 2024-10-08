@@ -1056,11 +1056,11 @@ footer {
     position: absolute;
     /* width: 100px; */
     right: 131px;
-    padding-right: 110px;
+    padding-right: 119px;
     top: 13px;
-    padding-top: 6px;
-    padding-bottom: 6px;
     padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 5px;
   }
   .rightmobsearch.active {
     background-color: #005dff;
@@ -1072,8 +1072,8 @@ footer {
   }
   
 }
-@media(max-width:420px){
+@media (max-width: 450px) {
 .brand-input{
-  padding-right: 1px;
+  padding-right: 10px;
 }
 }
